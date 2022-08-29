@@ -11,6 +11,8 @@ const images = [
   { id: 6, src: '/assets/images/dark.svg' },
 ];
 
+//test
+
 export default function Home() {
   return (
     <div className=' h-screen w-screen bg-gray-50 transition-all duration-300  dark:bg-gray-900 overflow-hidden'>
