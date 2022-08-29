@@ -8,14 +8,18 @@
     "start": "next start"
   },
   "dependencies": {
+    "@fontsource/kaushan-script": "^4.5.9",
+    "@fontsource/sirin-stencil": "^4.5.8",
     "@reduxjs/toolkit": "^1.8.3",
     "clsx": "^1.2.1",
     "framer-motion": "^7.2.1",
+    "locomotive-scroll": "^4.1.4",
     "next": "12.0.7",
     "next-themes": "^0.2.0",
     "react": "^18.2.0",
     "react-dom": "17.0.2",
     "react-icons": "^4.4.0",
+    "react-locomotive-scroll": "^0.2.2",
     "react-redux": "^8.0.2"
   },
   "devDependencies": {

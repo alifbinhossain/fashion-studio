@@ -14,7 +14,10 @@ module.exports = {
         secondary: '',
         tertiary: '',
       },
-      fontFamily: {},
+      fontFamily: {
+        sirin: ['Sirin Stencil'],
+        kaushan: ['Kaushan Script'],
+      },
     },
   },
   variants: {},

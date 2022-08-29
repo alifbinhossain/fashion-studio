@@ -2,10 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@import './reset.css';
+
 /* BASE STYLES */
 @layer base {
   body {
-    font-size: 1rem;
+    @apply font-sirin;
   }
   h1 {
   }
