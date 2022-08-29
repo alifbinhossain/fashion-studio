@@ -1,4 +1,4 @@
-import ToggleButton from '@components/shared/Buttons/toggleButton';
+import ToggleButton from '@components/shared/Buttons/ToggleButton';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
@@ -24,9 +24,16 @@ export default function Home() {
             <motion.div
               initial={{
                 opacity: 0,
+                y: 20,
               }}
               animate={{
                 opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.5,
+                delay: 1,
+                ease: 'easeIn',
               }}
             >
               <h1 className='text-5xl text-gray-600 dark:text-gray-200 '>
@@ -34,26 +41,41 @@ export default function Home() {
               </h1>
             </motion.div>
 
-            <h2 className='text-xl mt-4 text-orange-600 dark:text-orange-500 leading-relaxed'>
+            <motion.h2
+              initial={{
+                y: 20,
+                opacity: 0,
+              }}
+              animate={{
+                y: 0,
+                opacity: 1,
+              }}
+              transition={{
+                duration: 0.5,
+                delay: 1.5,
+                ease: 'easeIn',
+              }}
+              className='text-xl mt-4 text-orange-600 dark:text-orange-500 leading-relaxed'
+            >
               With <br /> TypeScript, TailwindCSS, Framer Motion, Redux Toolkit
               & Dark Mode
-            </h2>
+            </motion.h2>
 
             <div className='mt-8 grid grid-cols-3 gap-6'>
-              {images.map((el) => (
+              {images.map((el, i) => (
                 <motion.div
                   initial={{
                     opacity: 0,
-                    y: 100,
+                    scale: 0.75,
                   }}
                   animate={{
                     opacity: 1,
-                    y: 0,
+                    scale: [0.5, 1.25, 0.75, 1],
                   }}
                   transition={{
                     type: 'spring',
-                    delay: 0.25,
-                    duration: 1,
+                    delay: i * 0.3,
+                    duration: 0.6,
                   }}
                   key={el.id}
                   className=' p-6 border-2 border-gray-400 rounded-md flex items-center justify-center bg-gradient-to-r from-gray-200 to-gray-300'
