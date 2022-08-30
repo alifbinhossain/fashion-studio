@@ -4,6 +4,19 @@ import { motion, Variants } from 'framer-motion';
 const HeroVideo: React.FC = () => {
   const brandTitle = 'Blossom House.';
 
+  const containerVariants: Variants = {
+    hidden: {
+      opacity: 0,
+    },
+
+    show: {
+      opacity: 1,
+      transition: {
+        duration: 2,
+      },
+    },
+  };
+
   const itemVariants: Variants = {
     hidden: {
       opacity: 0,
@@ -23,7 +36,12 @@ const HeroVideo: React.FC = () => {
     <div className='w-full h-screen relative '>
       <div className='absolute top-0 bottom-0 left-0 right-0 z-[1] bg-bodyRgb bg-opacity-60'></div>
 
-      <motion.div className='absolute top-0 bottom-0 left-0 right-0 z-[5] flex flex-col items-center justify-center'>
+      <motion.div
+        variants={containerVariants}
+        initial='hidden'
+        animate='show'
+        className='absolute top-0 bottom-0 left-0 right-0 z-[5] flex flex-col items-center justify-center'
+      >
         <div className='text-center flex'>
           {brandTitle.split('').map((el, i) => {
             return (
@@ -32,7 +50,7 @@ const HeroVideo: React.FC = () => {
                 initial='hidden'
                 animate='show'
                 custom={i}
-                className='mr-1'
+                className=' mr-1'
                 key={i}
                 data-scroll
                 data-scroll-delay={(brandTitle.length - i + 1) / 9}
@@ -55,6 +73,7 @@ const HeroVideo: React.FC = () => {
         autoPlay
         muted
         loop
+        playsInline
       />
     </div>
   );
