@@ -1,7 +1,7 @@
-export default function Home() {
-  return (
-    <div>
-      <h1 className='text-6xl'>Hello World!</h1>
-    </div>
-  );
-}
+import Hero from '@components/sections/Hero/Hero';
+import type { NextPage } from 'next';
+
+const Home: NextPage = () => {
+  return <Hero />;
+};
+export default Home;

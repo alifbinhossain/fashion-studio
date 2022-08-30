@@ -12,9 +12,38 @@ const spring = {
   duration: 2,
 };
 
-const ToggleButton: React.FC = () => {
-  const { theme, setTheme } = useTheme();
+type Colors =
+  | 'slate'
+  | 'gray'
+  | 'zinc'
+  | 'neutral'
+  | 'stone'
+  | 'red'
+  | 'orange'
+  | 'amber'
+  | 'yellow'
+  | 'lime'
+  | 'green'
+  | 'emerald'
+  | 'teal'
+  | 'cyan'
+  | 'sky'
+  | 'blue'
+  | 'indigo'
+  | 'violet'
+  | 'purple'
+  | 'fuchsia'
+  | 'pink'
+  | 'rose';
 
+type Sizes = 'sm' | 'md' | 'lg';
+
+const ToggleButton: React.FC<{
+  light?: Colors;
+  dark?: Colors;
+  size?: Sizes;
+}> = ({ light = 'amber', dark = 'indigo', size = 'lg' }) => {
+  const { theme, setTheme } = useTheme();
   const handleToggle = () => {
     if (theme == 'light') {
       setTheme('dark');
@@ -29,24 +58,40 @@ const ToggleButton: React.FC = () => {
     <button
       onClick={handleToggle}
       className={clsx(
-        'group p-1 w-16 rounded-full bg-amber-200 dark:bg-indigo-200  relative  flex border-[1px] shadow-md',
+        `group  rounded-full  relative  flex border-[1px] shadow-md`,
+        size === 'sm'
+          ? 'p-[2px] w-12'
+          : size === 'md'
+          ? 'p-1 w-[60px]'
+          : size === 'lg'
+          ? 'p-1 w-20'
+          : '',
         theme === 'light'
-          ? 'justify-start border-amber-400'
-          : 'justify-end border-indigo-400'
+          ? `justify-start bg-${light}-200 border-${light}-400`
+          : `justify-end bg-${dark}-200 border-${dark}-400`
       )}
     >
-      {/* <div className='hidden group-hover:block   '>
-        <ToggleButtonTooltip theme={theme} />
-      </div> */}
+      {/* Comment this out to enable tooltip  */}
+      <div className='hidden group-hover:block'>
+        <ToggleButtonTooltip theme={theme} dark={dark} light={light} />
+      </div>
 
       <motion.div
         layout
         transition={spring}
         className={clsx(
-          ' h-6 w-6 p-1 flex items-center justify-center rounded-full',
+          '  flex items-center justify-center rounded-full shadow-2xl',
+
+          size === 'sm'
+            ? 'h-5 w-5 p-1'
+            : size === 'md'
+            ? 'h-6 w-6 p-1'
+            : size === 'lg'
+            ? 'h-8 w-8 p-[6px]'
+            : '',
           theme === 'light'
-            ? 'bg-amber-600/50 text-orange-900'
-            : 'bg-indigo-600/50 text-indigo-900'
+            ? `bg-${light}-600 bg-opacity-50 text-${light}-900 `
+            : `bg-${dark}-600 bg-opacity-50 text-${dark}-900 `
         )}
       >
         {theme == 'light' ? <BsIcons.BsSun /> : <BsIcons.BsMoonStars />}

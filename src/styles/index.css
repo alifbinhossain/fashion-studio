@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import '@fontsource/kaushan-script';
+@import '@fontsource/sirin-stencil';
 @import './reset.css';
 
 /* BASE STYLES */
@@ -10,8 +12,10 @@
     @apply font-sirin;
   }
   h1 {
+    @apply font-kaushan text-big_mobile md:text-big_tablet lg:text-big_desktop drop-shadow-text;
   }
   h2 {
+    @apply font-sirin text-xl font-medium drop-shadow-text capitalize;
   }
   h3 {
   }
