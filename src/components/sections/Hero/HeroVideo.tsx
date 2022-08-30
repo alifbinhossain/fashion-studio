@@ -20,10 +20,12 @@ const HeroVideo: React.FC = () => {
   const itemVariants: Variants = {
     hidden: {
       opacity: 0,
+      y: 20,
     },
 
     show: (i) => ({
       opacity: 1,
+      y: 0,
       transition: {
         duration: 0.7,
         ease: 'easeInOut',
@@ -53,7 +55,7 @@ const HeroVideo: React.FC = () => {
                 className=' mr-1'
                 key={i}
                 data-scroll
-                data-scroll-delay={(brandTitle.length - i + 1) / 9}
+                data-scroll-delay={(brandTitle.length - i + 1) / 20}
                 data-scroll-speed='4'
               >
                 {el}

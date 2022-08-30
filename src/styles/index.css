@@ -9,7 +9,7 @@
 /* BASE STYLES */
 @layer base {
   body {
-    @apply font-sirin text-white;
+    @apply font-sirin text-white bg-white;
   }
   h1 {
     @apply font-kaushan text-big_mobile md:text-big_tablet lg:text-big_desktop drop-shadow-text;

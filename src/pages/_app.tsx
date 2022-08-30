@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <Provider store={store}>
       <Head>
-        <title>NextJS TailwindCSS TypeScript Starter</title>
+        <title>Blossom House</title>
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
       </Head>
       <ThemeProvider defaultTheme='light' attribute='class'>
@@ -23,6 +23,12 @@ function MyApp({ Component, pageProps }) {
           <RLSProvider
             options={{
               smooth: true,
+              smartphone: {
+                smooth: true,
+              },
+              tablet: {
+                smooth: true,
+              },
               // ... all available Locomotive Scroll instance options
             }}
             watch={
