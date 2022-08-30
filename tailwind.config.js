@@ -27,7 +27,7 @@ module.exports = {
       },
 
       fontSize: {
-        big_mobile: ['3rem', '4rem'],
+        big_mobile: ['2.5rem', '4rem'],
         big_tablet: ['6rem', '7rem'],
         big_desktop: ['8rem', '9rem'],
       },

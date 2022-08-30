@@ -27,7 +27,7 @@ const Navbar: React.FC = () => {
         ease: 'backOut',
       }}
       className={clsx(
-        ' absolute top-0 flex  justify-center items-center w-screen z-[6] transition-all duration-[300] ease-in ',
+        ' absolute top-0 flex  justify-center items-center w-screen z-[6] transition-all duration-500 lg:duration-[300] ease-in ',
         collapse ? 'h-[14rem] lg:h-[5rem]' : 'h-0 '
       )}
     >

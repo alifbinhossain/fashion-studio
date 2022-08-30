@@ -58,7 +58,7 @@
 /* CUSTOM COMPONENT STYLES */
 @layer components {
   .btn-navbar {
-    @apply bg-white bg-opacity-60 text-body text-base font-semibold uppercase h-10 w-60 flex items-center justify-center btn-clip;
+    @apply bg-white bg-opacity-60 text-body text-base font-semibold uppercase h-10 w-48 lg:w-60 flex items-center justify-center btn-clip;
   }
 }
 
