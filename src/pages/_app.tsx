@@ -8,6 +8,7 @@ import { LocomotiveScrollProvider as RLSProvider } from 'react-locomotive-scroll
 import 'locomotive-scroll/dist/locomotive-scroll.css';
 import { useRef } from 'react';
 import { useRouter } from 'next/router';
+import ScrollTriggerProxy from '@components/shared/ScrollTriggerProxy';
 
 function MyApp({ Component, pageProps }) {
   const { asPath } = useRouter();
@@ -44,7 +45,8 @@ function MyApp({ Component, pageProps }) {
             }
             containerRef={containerRef}
           >
-            <div data-scroll-container ref={containerRef}>
+            <ScrollTriggerProxy />
+            <div className='App' data-scroll-container ref={containerRef}>
               <Component {...pageProps} />
             </div>
           </RLSProvider>

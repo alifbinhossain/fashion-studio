@@ -5,8 +5,8 @@ const About: React.FC = () => {
     <section
       id='fixed-target'
       className='bg-white relative min-h-screen w-[80vw] 
-    flex gap-x-4
-    mx-auto
+    flex flex-col lg:flex-row  gap-x-4
+    mx-auto 
     '
     >
       <h1
@@ -19,12 +19,12 @@ const About: React.FC = () => {
       </h1>
 
       <div
-        className=' w-1/2 relative z-[5] mt-48'
+        className='w-full  lg:w-1/2 relative z-[5] mt-24 md:mt-36 lg:mt-48 mb-8  lg:mb-0'
         data-scroll
         data-scroll-sticky
         data-scroll-target='#fixed-target'
       >
-        <p className='text-body text-lg'>
+        <p className='text-body text-base lg:text-lg'>
           We're fashion studio based in california. We create unique designs
           that will blow your mind. We also design unique jewellary pieces.
           Fashion is an ART that can not be grasped by everyone.
@@ -41,7 +41,7 @@ const About: React.FC = () => {
           make something that is easy for everyone.
         </p>
       </div>
-      <div className=' w-1/2 relative'>
+      <div className=' w-[60%] mx-auto lg:mx-0 lg:w-1/2 relative'>
         <img
           className='w-full h-auto'
           src='/assets/images/about-1.webp'
@@ -50,7 +50,7 @@ const About: React.FC = () => {
         <img
           data-scroll
           data-scroll-speed='5'
-          className='w-[40%] h-auto absolute right-[95%] bottom-[10%]'
+          className='w-[40%] h-auto absolute right-[80%] lg:right-[95%] bottom-[40%] lg:bottom-[10%]'
           src='/assets/images/about-2.webp'
           alt=''
         />
